@@ -1,11 +1,15 @@
 import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { StackHeaderOptions } from '@react-navigation/stack/lib/typescript/src/types'
+import {
+  StackHeaderOptions,
+  StackNavigationOptions
+} from '@react-navigation/stack/lib/typescript/src/types'
 
 import HomeContainer from '@Containers/Home'
 import BillContainer from '@Containers/Bill'
 import BillEntryContainer from '@Containers/BillEntry'
+import UserContainer from '@Containers/User'
 
 import { Screens } from './types'
 
@@ -35,6 +39,12 @@ class MainNavigator extends React.PureComponent<Props, State> {
 }
 
 class RootNavigator extends React.PureComponent<Props, State> {
+  private modalOptions: StackNavigationOptions = {
+    headerShown: false,
+    animationEnabled: false,
+    cardStyle: { backgroundColor: 'transparent' }
+  } as const
+
   render() {
     return (
       <NavigationContainer>
@@ -49,11 +59,12 @@ class RootNavigator extends React.PureComponent<Props, State> {
           <RootStack.Screen
             name={Screens.BillEntry}
             component={BillEntryContainer}
-            options={{
-              headerShown: false,
-              animationEnabled: false,
-              cardStyle: { backgroundColor: 'transparent' }
-            }}
+            options={this.modalOptions}
+          />
+          <RootStack.Screen
+            name={Screens.User}
+            component={UserContainer}
+            options={this.modalOptions}
           />
         </RootStack.Navigator>
       </NavigationContainer>

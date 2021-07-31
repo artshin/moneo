@@ -18,7 +18,8 @@ export default appSchema({
       name: 'bill_entries',
       columns: [
         { name: 'name', type: 'string' },
-        { name: 'bill_id', type: 'string', isIndexed: true }
+        { name: 'bill_id', type: 'string', isIndexed: true },
+        { name: 'price', type: 'number' }
       ]
     }),
     tableSchema({

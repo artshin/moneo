@@ -13,7 +13,10 @@ type Props = {
   bill: Bill
   users: User[]
   billEntries: BillEntry[]
+
+  onNameChange?: (value: string) => void
   onAddBillEntryPress?: () => void
+  onAddUserPress?: () => void
 }
 type State = {}
 
@@ -23,13 +26,14 @@ class BillComponent extends React.PureComponent<Props, State> {
   }
 
   render() {
-    const { billEntries, onAddBillEntryPress } = this.props
+    const { billEntries, onAddBillEntryPress, users, bill } = this.props
 
     return (
       <SafeAreaView style={styles.safeAreaView}>
         <View style={styles.container}>
           <FlatList
             data={billEntries}
+            extraData={{ users, bill }}
             ListHeaderComponent={this.renderHeader}
             keyExtractor={this.billEntryListKeyExtractor}
             renderItem={this.renderBillListItem}
@@ -44,12 +48,18 @@ class BillComponent extends React.PureComponent<Props, State> {
   }
 
   private renderHeader = () => {
-    const { bill, users } = this.props
+    const { bill, users, onAddUserPress, onNameChange } = this.props
+
     return (
       <View>
-        <TextInput style={styles.billTitleInput} placeholder={'Title'} value={bill.name} />
+        <TextInput
+          style={styles.billTitleInput}
+          placeholder={'Title'}
+          value={bill.name}
+          onChangeText={onNameChange}
+        />
         <View style={styles.userFlatListContainer}>
-          <TouchableOpacity style={styles.addUserButton}>
+          <TouchableOpacity style={styles.addUserButton} onPress={onAddUserPress}>
             <EvilIcon name={'plus'} size={36} />
           </TouchableOpacity>
           <FlatList

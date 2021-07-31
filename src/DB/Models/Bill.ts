@@ -7,7 +7,8 @@ export default class Bill extends Model {
   static table = 'bills'
 
   static associations = {
-    bill_entries: { type: 'has_many', foreignKey: 'bill_entry_id' }
+    bill_entries: { type: 'has_many', foreignKey: 'bill_entry_id' },
+    bill_users: { type: 'has_many', foreignKey: 'bill_id' }
   } as const
 
   @field('name') name!: string
