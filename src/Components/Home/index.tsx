@@ -20,13 +20,14 @@ class HomeComponent extends React.PureComponent<Props, State> {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>{'Moneo\nSplit your bills with ease'}</Text>
         <FlatList
           style={styles.list}
           data={bills}
           keyExtractor={this.billListKeyExtractor}
           renderItem={this.renderBillListItem}
           ItemSeparatorComponent={this.renderListSeparator}
+          ListHeaderComponent={this.renderListHeader}
+          bounces={false}
         />
       </View>
     )
@@ -40,6 +41,15 @@ class HomeComponent extends React.PureComponent<Props, State> {
   }
 
   private renderListSeparator = () => <View style={styles.listSeparator} />
+
+  private renderListHeader = () => {
+    return (
+      <View style={styles.headerContainer}>
+        <Text style={styles.headerTitle}>{'Moneo'}</Text>
+        <Text style={styles.headerSubtitle}>{'Split your bills with ease'}</Text>
+      </View>
+    )
+  }
 }
 
 export default HomeComponent

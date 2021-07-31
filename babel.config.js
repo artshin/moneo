@@ -16,7 +16,8 @@ module.exports = {
           '@Storybook': './src/Storybook',
           '@DB': './src/DB',
           '@Models': './src/Models',
-          '@Contexts': './src/Contexts'
+          '@Contexts': './src/Contexts',
+          '@Utils': './src/Utils',
         }
       }
     ]

@@ -15,8 +15,8 @@ export default class BillListItem extends React.PureComponent<Props, State> {
 
     return (
       <TouchableOpacity style={styles.container} onPress={this.onPress}>
-        <Text>{bill.name}</Text>
-        <Text>{'Split between:'}</Text>
+        <Text style={styles.title}>{bill.name}</Text>
+        <Text style={styles.subtitle}>{'Split between:'}</Text>
       </TouchableOpacity>
     )
   }

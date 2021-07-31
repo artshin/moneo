@@ -22,7 +22,8 @@
       "@Storybook/*": ["./src/Storybook/*"],
       "@DB/*": ["./src/DB/*"],
       "@Models/*": ["./src/Models/*"],
-      "@Contexts/*": ["./src/Contexts/*"]
+      "@Contexts/*": ["./src/Contexts/*"],
+      "@Utils/*": ["./src/Utils/*"],
     }
   },
   "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]

@@ -1,20 +1,32 @@
 import { StyleSheet } from 'react-native'
+import Colors from '@Utils/Colors'
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-    marginHorizontal: 8
+    backgroundColor: 'white'
   },
 
-  title: {
-    marginTop: 16,
-    textAlign: 'center',
-    fontSize: 18
+  headerContainer: {
+    paddingHorizontal: 16,
+    paddingVertical: 32,
+    backgroundColor: Colors.metallicSeaweed
+  },
+
+  headerTitle: {
+    textAlign: 'left',
+    fontSize: 36,
+    color: Colors.white
+  },
+
+  headerSubtitle: {
+    fontSize: 24,
+    color: Colors.white
   },
 
   list: {
-    marginTop: 16
+    // marginTop: 16,
+    // backgroundColor: Colors.beaBlue
   },
 
   listSeparator: {

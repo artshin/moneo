@@ -10,6 +10,7 @@ import HomeContainer from '@Containers/Home'
 import BillContainer from '@Containers/Bill'
 import BillEntryContainer from '@Containers/BillEntry'
 import UserContainer from '@Containers/User'
+import Colors from '@Utils/Colors'
 
 import { Screens } from './types'
 
@@ -22,7 +23,7 @@ type State = {}
 class MainNavigator extends React.PureComponent<Props, State> {
   private headerOptions: StackHeaderOptions = {
     headerStyle: {
-      backgroundColor: 'white',
+      backgroundColor: Colors.metallicSeaweed,
       shadowColor: 'transparent'
     },
     headerTintColor: 'black'

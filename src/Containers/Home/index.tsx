@@ -7,6 +7,7 @@ import EvilIcon from 'react-native-vector-icons/EvilIcons'
 import { DataContext, DataContextType } from '@Contexts/Data'
 import styles from './styles'
 import Bill from '@Models/Bill'
+import Colors from '@Utils/Colors'
 
 type NavigationProp = StackNavigationProp<NavigatorParamList, Screens.Home>
 
@@ -39,7 +40,7 @@ class HomeContainer extends React.PureComponent<Props, State> {
       headerTitle: '',
       headerRight: () => (
         <TouchableOpacity style={styles.headerRight} onPress={this.onCreateBillPress}>
-          <EvilIcon name={'plus'} size={32} />
+          <EvilIcon name={'plus'} size={32} color={Colors.white} />
         </TouchableOpacity>
       )
     })
